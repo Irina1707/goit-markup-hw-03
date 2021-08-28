@@ -13,6 +13,19 @@
   --border-color: #ececec;
   --secondary-border-color: #eeeeee;
 }
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
 body {
   background-color: var(--primary-white-color);
   color: var(--primary-text-color);
@@ -45,7 +58,7 @@ p {
   padding: 0;
 }
 .page-header {
-  border: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
 }
 .logo-primary {
   color: var(--logo-color);
@@ -122,8 +135,11 @@ p {
   padding-bottom: 200px;
 }
 .hero-title {
+  max-width: 696px;
   margin-top: 0;
   margin-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
 
   color: var(--primary-white-color);
 
@@ -171,9 +187,7 @@ p {
   text-align: center;
   letter-spacing: 0.03em;
 }
-.invisible {
-  display: none;
-}
+
 .section {
   padding-top: 94px;
   padding-bottom: 94px;
@@ -214,6 +228,9 @@ p {
 .performance-list {
   display: flex;
 }
+.performance-list .item {
+  width: 370px;
+}
 .performance-list .item:not(:last-child) {
   margin-right: 30px;
 }
@@ -229,15 +246,18 @@ p {
 }
 .team-list .item {
   width: 270px;
-  padding-bottom: 30px;
   text-align: center;
 }
 .team-list .item:not(:last-child) {
   margin-right: 30px;
 }
+
+.team-padding {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
 .team-list-image {
   display: block;
-  margin-bottom: 30px;
 }
 .team-member {
   color: var(--title-text-color);
@@ -280,10 +300,11 @@ footer {
   line-height: 1.71;
   letter-spacing: 0.03em;
 }
-
+.footer-contacts .item {
+  margin-top: 9px;
+}
 .footer-contacts .contacts-secondary {
   color: var(--contacts-color);
-  padding-top: 9px;
 }
 
 .footer-contacts .contacts-secondary:hover,
@@ -295,11 +316,8 @@ footer {
 /*Проекты*/
 .button-list {
   display: flex;
-  width: 611px;
-
-  margin-left: auto;
-  margin-right: auto;
   margin-bottom: 50px;
+  justify-content: center;
 }
 
 .button-list .item + .item {
@@ -360,4 +378,5 @@ footer {
 .name-padding {
   padding: 20px 24px;
   border: 1px solid var(--secondary-border-color);
+  border-top: none;
 }
